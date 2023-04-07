@@ -17,7 +17,7 @@ const Login = () => {
     const submitHandler =(e) =>{
         e.preventDefault();
 
-        axios.post('http://localhost:8000/api/login', user, {withCredentials:true})
+        axios.post('https://taquiza-api.onrender.com/api/login', user, {withCredentials:true})
             .then((res) => {
                 console.log(res)
                 navigate('/store-manager')

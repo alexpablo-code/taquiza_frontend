@@ -22,7 +22,7 @@ const StoreManager = ({allProducts, setAllProducts}) => {
             //   axios.post('http://localhost:8000/api/register', user, { headers })
             
 
-            axios.post('http://localhost:8000/api/authenticated', {}, {withCredentials:true})
+            axios.post('https://taquiza-api.onrender.com/api/authenticated', {}, {withCredentials:true})
                 .then((res) => {
                     console.log(res);
                 })
@@ -31,7 +31,7 @@ const StoreManager = ({allProducts, setAllProducts}) => {
                     navigate('/');
                 })
 
-            axios.get('http://localhost:8000/api/allproducts')
+            axios.get('https://taquiza-api.onrender.com/api/allproducts')
                 .then((products) => {
                     console.log(products)
                     setAllProducts(products.data)
@@ -42,7 +42,7 @@ const StoreManager = ({allProducts, setAllProducts}) => {
 
 
         const deleteItem = (id) => {
-            axios.delete(`http://localhost:8000/api/allproducts/delete/${id}`)
+            axios.delete(`https://taquiza-api.onrender.com/api/allproducts/delete/${id}`)
                 .then((res) => {
                     console.log("item deleted", res)
                     let updatedProducts= allProducts.filter(item => item._id !== id)
@@ -53,7 +53,7 @@ const StoreManager = ({allProducts, setAllProducts}) => {
         }
 
         const logout = () => {
-            axios.post('http://localhost:8000/api/logout', {}, {withCredentials:true})
+            axios.post('https://taquiza-api.onrender.com/api/logout', {}, {withCredentials:true})
                 .then((res) => {
                     console.log(res);
                     navigate('/')

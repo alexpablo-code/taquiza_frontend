@@ -12,7 +12,7 @@ const EditProduct = () => {
     const[errors, setErrors] = useState({})
 
     useEffect(() => {
-        axios.get(`http://localhost:8000/api/allproducts/${id}`)
+        axios.get(`https://taquiza-api.onrender.com/api/allproducts/${id}`)
             .then((oneProd) => {
                 setProduct(oneProd.data)
             })
@@ -23,7 +23,7 @@ const EditProduct = () => {
 
     const submitHandler = (e) => {
         e.preventDefault();
-        axios.put(`http://localhost:8000/api/allproducts/update/${id}`, product)
+        axios.put(`https://taquiza-api.onrender.com/api/allproducts/update/${id}`, product)
             .then((result) => {
                 console.log(result)
                 navigate('/store-manager')

@@ -12,7 +12,7 @@ const AddProduct = () => {
 
     const submitHandler =(e) => {
         e.preventDefault();
-        axios.post('http://localhost:8000/api/addproduct', product)
+        axios.post('https://taquiza-api.onrender.com/api/addproduct', product)
             .then((newProduct) => {
                 console.log(newProduct)
                 navigate('/store-manager')
