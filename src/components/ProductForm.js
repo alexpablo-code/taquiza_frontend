@@ -32,7 +32,7 @@ const handleInputChange =(e) => {
                 </div>
                 <div className='my-2'>
                     <label htmlFor="">Price:</label>
-                    <input className='form-control' type="number" name='price' value={product.price} onChange={handleInputChange}/>
+                    <input className='form-control' type="number" name='price' value={product.price} onChange={handleInputChange} step="0.01"/>
                     {
                         errors.price?
                         <p className='text-danger'>{errors.price.message}</p>:

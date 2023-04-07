@@ -19,7 +19,7 @@ const Login = () => {
 
         axios.post('https://taquiza-api.onrender.com/api/login', user, {withCredentials:true})
             .then((res) => {
-                console.log(res)
+                console.log("LOGGED IN",res)
                 navigate('/store-manager')
             })
             .catch((err) => {
