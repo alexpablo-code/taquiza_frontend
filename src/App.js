@@ -13,7 +13,7 @@ function App() {
   const [allProducts, setAllProducts] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:8000/api/allproducts')
+    axios.get('https://taquiza-api.onrender.com/api/allproducts')
         .then((products) => {
             console.log(products)
             setAllProducts(products.data)
