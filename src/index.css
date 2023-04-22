@@ -30,7 +30,7 @@ code {
   
   background-image:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url('../src/components/images/proTacos.jpg');
   background-size: cover;
-  background-position: 0% 80%;
+  /* background-position: 0% 80%; */
   height: 50vh;
 }
 
@@ -39,6 +39,11 @@ code {
   position: relative;
   bottom: 0;
   width: 100%;
+}
+
+.menuTitle{
+  font-size: 50px;
+  font-weight: bolder;
 }
 
 .itemsContainer{
@@ -54,7 +59,12 @@ code {
   background-color: rgb(156, 155, 155, .2);
 }
 .foodItemCard:hover{
-  background-color: rgb(220, 20, 60, 0.2);
+  /* background-color: rgb(220, 20, 60, 0.2); */
+  border: 1px solid rgba(153, 8, 8, .5);
+  box-shadow: -9px 10px 5px -6px rgba(153, 8, 8, .2);
+}
+.foodItemCard > h4{
+  color: rgb(204, 15, 15);
 }
 
 .breakfastSec{

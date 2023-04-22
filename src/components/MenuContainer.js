@@ -4,7 +4,7 @@ import FoodItemCard from './FoodItemCard';
 const MenuContainer = ({allProducts}) => {
     return (
         <div className='container'>
-            <h2 className='text-center'>Menu</h2>
+            <h2 className='text-center menuTitle'>- Menu -</h2>
             <div className='itemsContainer'>
                 {
                     allProducts.map((item) => (

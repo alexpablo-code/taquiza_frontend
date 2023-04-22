@@ -2,9 +2,9 @@ import React from 'react';
 
 const InfoSec = () => {
     return (
-        <section className='bg-black text-white'>
-            <div className='container my-5 text-center'>
-                <h4 className='text-danger fs-1'>Info</h4>
+        <section className='bg-black text-white' id='location'>
+            <div className='container my-5 text-center py-5'>
+                <h4 className='text-danger fs-1'>Location & Hours</h4>
                 <div className='row'>
                     <div className=''>
                         <p className='fw-bold my-1'>Visit Us</p>
