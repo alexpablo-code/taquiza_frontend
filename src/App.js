@@ -1,10 +1,10 @@
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
-import Home from './components/Home';
+import Home from './Pages/Home';
 import StoreManager from './components/StoreManager';
 import {useState, useEffect} from 'react';
 import AddProduct from './components/AddProduct';
 import EditProduct from './components/EditProduct';
-import Menu from './components/Menu';
+import Menu from './Pages/Menu';
 import axios from 'axios';
 import Register from './components/Register';
 import Login from './components/Login';

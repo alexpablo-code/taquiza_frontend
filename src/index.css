@@ -28,11 +28,12 @@ code {
 
 .hero-bg{
   
-  background-image: url('../src/components/images/proTacos.jpg');
+  background-image:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url('../src/components/images/proTacos.jpg');
   background-size: cover;
   background-position: 0% 80%;
   height: 50vh;
 }
+
 
 .footer{
   position: relative;
@@ -89,4 +90,10 @@ code {
   height: 150px;
   border-radius: 20px;
   margin: 10px 5px;
+}
+
+@media screen and (min-width: 992px){
+  .hero-bg{
+    height: 80vh;
+  }
 }

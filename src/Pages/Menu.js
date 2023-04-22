@@ -1,7 +1,7 @@
 import React from 'react';
-import Footer from './Footer';
-import MenuContainer from './MenuContainer';
-import NavBar from './NavBar';
+import Footer from '../components/Footer';
+import MenuContainer from '../components/MenuContainer';
+import NavBar from '../components/NavBar';
 
 const Menu = ({allProducts}) => {
     return (

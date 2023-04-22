@@ -6,7 +6,7 @@ const NavBar = () => {
         <div>
             <nav className='bg-dark'>
                 <div className='container'>
-                    <div className='row py-3'>
+                    <div className='row py-1'>
                         <div className='col-6 d-flex align-items-center'>
                             <img className='logo' src={logo} alt="business_logo" />
                             <h1><Link to={'/'} className='text-decoration-none text-white'>Taquiza Street</Link></h1>
