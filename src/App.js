@@ -12,14 +12,14 @@ import Login from './components/Login';
 function App() {
   const [allProducts, setAllProducts] = useState([]);
 
-  useEffect(() => {
-    axios.get('https://taquiza-api.onrender.com/api/allproducts')
-        .then((products) => {
-            console.log(products)
-            setAllProducts(products.data)
-        })
-        .catch((err) => console.log(err));
-},[])
+//   useEffect(() => {
+//     axios.get('https://taquiza-api.onrender.com/api/allproducts')
+//         .then((products) => {
+//             console.log(products)
+//             setAllProducts(products.data)
+//         })
+//         .catch((err) => console.log(err));
+// },[])
 
 
   return (
