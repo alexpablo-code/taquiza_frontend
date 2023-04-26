@@ -105,5 +105,6 @@ code {
 @media screen and (min-width: 992px){
   .hero-bg{
     height: 80vh;
+    background-position: 0% 90%;
   }
 }

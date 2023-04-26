@@ -7,7 +7,7 @@ const Footer = () => {
                 <div className='container'>
                     <div className='row py-3'>
                         <div className='col-5'>
-                            <Link to={'/manager-register'} >Store Manager</Link>
+                            <Link to={'/manager-login'} >Store Manager</Link>
                         </div>
                         <div className='col-5 offset-2'>
                             <p className='text-white text-end'>©️ 2023 Taquiza Street <br/> Website by <Link>Alex Pablo</Link></p>
