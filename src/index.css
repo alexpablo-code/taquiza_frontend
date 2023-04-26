@@ -45,6 +45,26 @@ code {
   font-size: 50px;
   font-weight: bolder;
 }
+.categoriesContainer{
+  width: 90%;
+  margin: auto;
+}
+.categoryBox{
+  margin: 20px 0;
+  background-color: rgb(238, 235, 231);
+}
+.categoryBox > h2{
+  color: darkorange;
+  text-align: center;
+  font-style: italic;
+}
+
+.itemCard > h4{
+  color: crimson;
+}
+.itemCard{
+  border-bottom: 1px solid lightgrey;
+}
 
 .itemsContainer{
   display: grid;
