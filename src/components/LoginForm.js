@@ -23,7 +23,7 @@ const LoginForm = ({user, setUser, submitHandler, errors}) => {
                 }
 
                 <button className='btn btn-warning my-3'>Login</button> <br/> 
-                <Link className='my-3' to={'/manager-register'}>Click here to Register</Link>
+                <Link className='my-3' to={''}>Forgot your password?</Link>
             </form>
         </div>
     );

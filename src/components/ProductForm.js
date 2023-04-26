@@ -1,20 +1,53 @@
-import React from 'react';
+import {useEffect, useState} from 'react';
+import axios from 'axios';
 
-const ProductForm = ({product, setProduct, submitHandler, errors}) => {
 
-const handleInputChange =(e) => {
-    setProduct({...product, [e.target.name]: e.target.value})
-}
+
+const ProductForm = ({allItems, setAllItems, categoryId}) => {
+    const [menuItem, setMenuItem] = useState({});
+    const [errors, setErrors] = useState({});
+    const [showForm, setShowForm] = useState(false);
+
+    useEffect(() => {
+        setMenuItem({...menuItem, category:categoryId})
+    }, [])
+
+    const handleInputChange =(e) => {
+        setMenuItem({...menuItem, [e.target.name]: e.target.value})
+    }
+
+    
+    const addItemHandler = (e) => {
+        e.preventDefault();
+        axios.post('https://taquiza-api.onrender.com/api/additem', menuItem)
+        // axios.post('http://localhost:8000/api/additem', menuItem)
+            .then((newItem) => {
+                console.log(newItem)
+                setAllItems(prevAllItems => {
+                    return [...prevAllItems, newItem.data];
+                })
+                setMenuItem({...menuItem, name:'', description:'', price:''});
+                setErrors({});
+            })
+            .catch((err) => {
+                console.log("Error",err.response.data.errors);
+                setErrors(err.response.data.errors);
+                // setErrors(err);
+            })
+    }
 
 
 
     return (
-        <div className='container'>
-            <form onSubmit={submitHandler} className='col-8 offset-3 my-3'>
-                <h2>Add Product</h2>
+        <div className=''>
+            {
+                !showForm?
+                <button className='btn btn-sm btn-info mx-3' onClick={() => setShowForm(true)}>Add Item</button>:
+                <form onSubmit={addItemHandler} className='col-8 offset-1 my-1'>
+                <h4>Add Product</h4>
                 <div className='my-2'>
                     <label htmlFor="">Name:</label>
-                    <input className='form-control' type="text" name='name' value={product.name} onChange={handleInputChange}/>
+                    <input className='form-control' type="text" name='name' value={menuItem.name} onChange={handleInputChange}/>
                     {
                         errors.name?
                         <p className='text-danger'>{errors.name.message}</p>:
@@ -23,7 +56,7 @@ const handleInputChange =(e) => {
                 </div>
                 <div className='my-2'>
                     <label htmlFor="">Description:</label>
-                    <input className='form-control' type="text" name='description' value={product.description} onChange={handleInputChange}/>
+                    <input className='form-control' type="text" name='description' value={menuItem.description} onChange={handleInputChange}/>
                     {
                         errors.description?
                         <p className='text-danger'>{errors.description.message}</p>:
@@ -32,24 +65,21 @@ const handleInputChange =(e) => {
                 </div>
                 <div className='my-2'>
                     <label htmlFor="">Price:</label>
-                    <input className='form-control' type="number" name='price' value={product.price} onChange={handleInputChange} step="0.01"/>
+                    <input className='form-control' type="number" name='price' value={menuItem.price} onChange={handleInputChange} step="0.01"/>
                     {
                         errors.price?
                         <p className='text-danger'>{errors.price.message}</p>:
                         null
                     }
                 </div>
-                <div className='my-2'>
+                {/* <div className='my-2'>
                     <label htmlFor="">Category:</label>
-                    <input className='form-control' type="text" name='category' value={product.category} onChange={handleInputChange}/>
-                    {
-                        errors.category?
-                        <p className='text-danger'>{errors.category.message}</p>:
-                        null
-                    }
-                </div>
-                <button className='btn btn-primary'>Submit</button>
+                    <input className='form-control' type="hidden" name='category' value={categoryId} onChange={handleInputChange}/>
+                </div> */}
+                <button className='btn btn-primary btn-sm'>Submit</button>
+                <button className='btn btn-sm btn-info mx-2'onClick={() => setShowForm(false)}>Cancel</button>
             </form>
+            }
             
         </div>
     );

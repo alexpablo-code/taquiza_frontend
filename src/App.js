@@ -31,7 +31,7 @@ function App() {
         <Route path='/manager-register' element={<Register/>} />
         <Route path='/manager-login' element={<Login/>} />
         <Route path='/store-manager'>
-          <Route index element={<StoreManager allProducts ={allProducts} setAllProducts={setAllProducts}/>} />
+          <Route index element={<StoreManager/>} />
           <Route path='addproduct' element={<AddProduct/>} />
           <Route path='editproduct/:id' element={<EditProduct/>} />
         </Route>
